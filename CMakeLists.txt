@@ -13,12 +13,12 @@ ADD_COMPILE_OPTIONS(-std=c++11 )
 ADD_COMPILE_OPTIONS(-std=c++14 )
 
 # HesaiLidarのSDKをサブディレクトリとして追加
-add_subdirectory(/home/oga/Documents/Pandar_python_interface/HesaiLidar_General_SDK)
+add_subdirectory(HesaiLidar_General_SDK)
 
 # インクルードディレクトリの追加
 include_directories(
-    /home/oga/Documents/Pandar_python_interface/HesaiLidar_General_SDK/include
-    /home/oga/Documents/Pandar_python_interface/HesaiLidar_General_SDK/src/PandarGeneralRaw/include
+    HesaiLidar_General_SDK/include
+    HesaiLidar_General_SDK/src/PandarGeneralRaw/include
     ${Boost_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
 
