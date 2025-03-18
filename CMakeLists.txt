@@ -17,16 +17,16 @@ add_subdirectory(HesaiLidar_General_SDK)
 
 # インクルードディレクトリの追加
 include_directories(
+    ${PROJECT_SOURCE_DIR}/include           # shared_memory.h を含む新しい include ディレクトリ
     HesaiLidar_General_SDK/include
     HesaiLidar_General_SDK/src/PandarGeneralRaw/include
     ${Boost_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
-
 )
 
 # 実行ファイルの定義（ファイル名やソースは必要に応じて変更してください）
 add_executable(PandarApp
-    lidar_callback.cpp
+    src/lidar_callback.cpp
 )
 
 # 必要なライブラリのリンク
