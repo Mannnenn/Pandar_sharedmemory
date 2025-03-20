@@ -22,10 +22,12 @@ if __name__ == "__main__":
 
         # こっちを実行するとコールバック関数が呼ばれるようになる.
         # 実処理を行うときはこちらを使って、process_pointcloudの中に処理を追加
+
         # viewer.run_processor()
 
         # こっちを実行するとコールバック関数は呼ばれない.
         # 点群データを表示するだけの処理
+
         viewer.run_visualizer()
     except KeyboardInterrupt:
         viewer.stop()
