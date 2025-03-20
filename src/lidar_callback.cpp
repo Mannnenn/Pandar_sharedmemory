@@ -7,9 +7,6 @@ int frameItem = 0;
 
 void gpsCallback(int timestamp)
 {
-#ifdef PRINT_FLAG
-    printf("gps: %d\n", timestamp);
-#endif
 }
 
 void lidarCallback(boost::shared_ptr<PPointCloud> cld, double timestamp)
@@ -32,14 +29,6 @@ void lidarCallback(boost::shared_ptr<PPointCloud> cld, double timestamp)
     // 共有メモリにデータを書き込み
     static SharedMemoryWriter shmWriter("PointCloudSharedMemory", 10 * 1024 * 1024); // 10MB領域を確保
     shmWriter.writeData(points);
-
-#ifdef PCD_FILE_WRITE_FLAG
-    frameItem++;
-    pcl::PCDWriter writer;
-    std::string fileName = "PointCloudFrame" + std::to_string(frameItem) + ".pcd";
-    writer.write(fileName, *cld);
-    printf("save frame %d\n", frameItem);
-#endif
 }
 
 void lidarAlgorithmCallback(HS_Object3D_Object_List *object_t)
