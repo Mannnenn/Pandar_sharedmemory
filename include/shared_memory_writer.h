@@ -10,6 +10,7 @@
 struct Point
 {
     float x, y, z;
+    float intensity; // 反射強度を追加
 };
 
 class SharedMemoryWriter
@@ -36,6 +37,7 @@ public:
     // 点群データを共有メモリに書き込みます。
     void writeData(const std::vector<Point> &points)
     {
+        // num_points と各点のデータを保存
         std::size_t data_size = sizeof(int) + points.size() * sizeof(Point);
         if (data_size > size_)
         {

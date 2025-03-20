@@ -1,7 +1,6 @@
 #include "pandarGeneral_sdk/pandarGeneral_sdk.h"
 #include "shared_memory_writer.h"
-#define PRINT_FLAG
-// #define PCD_FILE_WRITE_FLAG
+// #define PRINT_FLAG
 
 int frameItem = 0;
 
@@ -23,6 +22,7 @@ void lidarCallback(boost::shared_ptr<PPointCloud> cld, double timestamp)
         p.x = pt.x;
         p.y = pt.y;
         p.z = pt.z;
+        p.intensity = pt.intensity; // 反射強度を追加（SDK の pt に intensity メンバがある前提）
         points.push_back(p);
     }
 
