@@ -4,7 +4,7 @@
 
 ```shell
 cd ~/your_dir
-git clone https://github.com/Mannnenn/Pandar_sharedmemory.git
+git clone --recursive https://github.com/Mannnenn/Pandar_sharedmemory.git
 cd Pandar_sharedmemory
 ```
 
